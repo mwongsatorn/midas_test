@@ -6,6 +6,7 @@ function getQuestionPart(phrases : string[]) : string[] {
 
 // find common substring in the given phrases
 function findSubstring(strings: string[]): string {
+  strings.sort((a,b) => a.length - b.length)
   const firstString = strings[0];
   let subString = "";
 
@@ -30,5 +31,5 @@ function findSubstring(strings: string[]): string {
   return subString;
 }
 
-console.log(getQuestionPart(["BEFRIEND", "GIRLFRIEND", "FRIENDSHIP"]));
-console.log(getQuestionPart(["BATHROOM", "BATH SALTS", "BLOODBATH"]))
+console.log(getQuestionPart(["BEFRIEND", "GIRLFRIEND", "FRIENDSHIP"])); // [ 'BE', 'GIRL', 'SHIP' ]
+console.log(getQuestionPart(["BATHROOM", "BATH SALTS", "BLOODBATH"])) // [ 'ROOM', 'SALTS', 'BLOOD' ]
